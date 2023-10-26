@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../Button/Button";
 import FriendData from "../../FriendData";
 
-const AddFriendForm = ({ friends, setFriends, setOpenFormAddFriend }) => {
+const AddFriendForm = ({ friends, setFriends }) => {
   const freindsInitialNumber = FriendData.length + 1;
   const [name, setName] = useState("");
   const [image, setImage] = useState("././image");
@@ -10,6 +10,7 @@ const AddFriendForm = ({ friends, setFriends, setOpenFormAddFriend }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // setOpenFormAddFriend(false);
     setId(id + 1);
     const newFriend = {
       name,
@@ -19,7 +20,7 @@ const AddFriendForm = ({ friends, setFriends, setOpenFormAddFriend }) => {
     };
 
     if (!name || !image) return;
-    // setOpenFormAddFriend(false);
+    setName("");
     setFriends([...friends, newFriend]);
   };
 
