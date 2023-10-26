@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 
 const Friend = ({ friend }) => {
   return (
-    <div className="flex justify-between my-2 p-2 rounded-lg hover:bg-slate-700 w-72">
+    <div className="flex justify-between my-2 p-2 rounded-lg hover:bg-slate-700">
       <div className="imgAndName flex">
         <div>
           <img
@@ -14,13 +14,17 @@ const Friend = ({ friend }) => {
         <div className="flex flex-col text-xs ml-2 mt-1">
           <span className="font-bold">{friend.name}</span>
           {friend.balance === 0 && (
-            <span className="text-white">you and freind even</span>
+            <span className="text-white">you and {friend.name} even</span>
           )}
           {friend.balance > 0 && (
-            <span className="text-green-400">you and freind even</span>
+            <span className="text-green-400">
+              {friend.name} owes you {friend.balance}$
+            </span>
           )}
           {friend.balance < 0 && (
-            <span className="text-red-500">you and freind even</span>
+            <span className="text-red-500">
+              you owe {friend.name} {Math.abs(friend.balance)}$
+            </span>
           )}
         </div>
       </div>

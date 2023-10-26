@@ -1,12 +1,12 @@
 import Friend from "../Friend/Friend";
-import FriendData from "../../FriendData";
+// import FriendData from "../../FriendData";
 
-const FriendList = () => {
-  const friends = FriendData;
+const FriendList = ({ friends }) => {
+  // const friends = FriendData;
 
   return (
-    <div className="flex justify-center">
-      <div className="p-4 text-white">
+    <div className="">
+      <div className=" text-white">
         {friends.map((friend) => {
           return <Friend key={friend.id} friend={friend} />;
         })}

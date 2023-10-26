@@ -1,7 +1,10 @@
-const Button = ({ children }) => {
+const Button = ({ children, onOpenFormAdd }) => {
   return (
     <div>
-      <button className="bg-slate-900 rounded-lg px-2 py-1 text-xs">
+      <button
+        onClick={onOpenFormAdd}
+        className="bg-slate-900 rounded-lg px-2 py-1 text-xs"
+      >
         {children}
       </button>
     </div>
