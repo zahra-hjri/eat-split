@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 
 const Friend = ({ friend }) => {
   return (
-    <div className="flex justify-between my-2 p-2 rounded-lg hover:bg-slate-700">
+    <div className="flex justify-between my-2 p-2 rounded-lg hover:bg-teal-900">
       <div className="imgAndName flex">
         <div>
           <img

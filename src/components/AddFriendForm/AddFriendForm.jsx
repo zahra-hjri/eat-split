@@ -10,7 +10,7 @@ const AddFriendForm = ({ friends, setFriends }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setOpenFormAddFriend(false);
+    if (!name || !image) return;
     setId(id + 1);
     const newFriend = {
       name,
@@ -19,13 +19,13 @@ const AddFriendForm = ({ friends, setFriends }) => {
       id,
     };
 
-    if (!name || !image) return;
     setName("");
     setFriends([...friends, newFriend]);
+    // setOpenFormAddFriend(!openFormAddFriend);
   };
 
   return (
-    <div className="bg-gray-800 p-4  rounded-lg">
+    <div className="bg-teal-950 p-4  rounded-lg">
       <form onSubmit={handleSubmit}>
         <div className="flex justify-between">
           <label className="text-xs font-bold text-white">

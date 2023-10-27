@@ -6,6 +6,15 @@ export default {
       screens: {
         xs: "475px",
       },
+      colors: {
+        ForestGreen: "#013A20",
+
+        EmeraldGreen: "#478C5C",
+
+        Lint: "#BACC81",
+
+        LintLight: "#CDD193",
+      },
     },
   },
   plugins: [require("daisyui")],
