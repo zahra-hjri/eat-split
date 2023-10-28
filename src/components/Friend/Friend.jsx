@@ -1,8 +1,13 @@
 import Button from "../Button/Button";
 
-const Friend = ({ friend }) => {
+const Friend = ({ friend, onSelection, selectedFriend }) => {
+  const isOpen = selectedFriend?.id === friend.id;
   return (
-    <div className="flex justify-between my-2 p-2 rounded-lg hover:bg-teal-900">
+    <div
+      className={`flex justify-between my-2 p-2 rounded-lg ${
+        isOpen ? "bg-teal-900" : ""
+      }`}
+    >
       <div className="imgAndName flex">
         <div>
           <img
@@ -17,19 +22,21 @@ const Friend = ({ friend }) => {
             <span className="text-white">you and {friend.name} even</span>
           )}
           {friend.balance > 0 && (
-            <span className="text-green-400">
+            <span className="text-green-500">
               {friend.name} owes you {friend.balance}$
             </span>
           )}
           {friend.balance < 0 && (
-            <span className="text-red-500">
+            <span className="text-red-600">
               you owe {friend.name} {Math.abs(friend.balance)}$
             </span>
           )}
         </div>
       </div>
-      <div className="btnn mt-1">
-        <Button>select</Button>
+      <div className=" mt-1">
+        <Button onClick={() => onSelection(friend)}>
+          {isOpen ? "close" : "select"}
+        </Button>
       </div>
     </div>
   );

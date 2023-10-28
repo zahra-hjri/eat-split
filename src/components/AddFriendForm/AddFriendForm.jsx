@@ -5,7 +5,7 @@ import FriendData from "../../FriendData";
 const AddFriendForm = ({ friends, setFriends }) => {
   const freindsInitialNumber = FriendData.length + 1;
   const [name, setName] = useState("");
-  const [image, setImage] = useState("././image");
+  const [image, setImage] = useState("https://image.jpg");
   const [id, setId] = useState(freindsInitialNumber);
 
   const handleSubmit = (e) => {
@@ -13,13 +13,14 @@ const AddFriendForm = ({ friends, setFriends }) => {
     if (!name || !image) return;
     setId(id + 1);
     const newFriend = {
-      name,
-      image: `./${id}.jpg`,
-      balance: 0,
       id,
+      name,
+      balance: 0,
+      image: `./${id}.jpg`,
     };
 
     setName("");
+
     setFriends([...friends, newFriend]);
     // setOpenFormAddFriend(!openFormAddFriend);
   };

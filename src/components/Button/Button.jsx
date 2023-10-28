@@ -1,8 +1,8 @@
-const Button = ({ children, onOpenFormAdd }) => {
+const Button = ({ children, onClick }) => {
   return (
     <div>
       <button
-        onClick={onOpenFormAdd}
+        onClick={onClick}
         className="bg-green-600 rounded-lg px-2 py-1 text-xs"
       >
         {children}
