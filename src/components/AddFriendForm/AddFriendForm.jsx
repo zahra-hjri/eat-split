@@ -26,7 +26,7 @@ const AddFriendForm = ({ friends, setFriends }) => {
   };
 
   return (
-    <div className="bg-teal-950 p-4  rounded-lg">
+    <div className="bg-teal-950 p-4 rounded-lg">
       <form onSubmit={handleSubmit}>
         <div className="flex justify-between">
           <label className="text-xs font-bold text-white">
