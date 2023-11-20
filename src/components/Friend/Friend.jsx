@@ -27,7 +27,7 @@ const Friend = ({ friend, onSelection, selectedFriend }) => {
             </span>
           )}
           {friend.balance < 0 && (
-            <span className="text-red-600">
+            <span className="text-red-400">
               you owe {friend.name} {Math.abs(friend.balance)}$
             </span>
           )}
